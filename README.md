@@ -14,15 +14,16 @@ git clone https://github.com/aligencay/weather-app.git
 
 ## Çalıştırma
 
-- https://
+- https://weather-app-aligencay.vercel.app
 
 Linkini kullanarak projemi daha detaylı inceleyebilirsiniz.
 
 ## Genel Bakış
 
 <div>
-<img src="">
-<img src="">
+<img src="images/screenshots/main-screen.png">
+<img src="images/screenshots/info-screen.png">
+<img src="images/screenshots/error-screen.png">
 </div>
 
 ## Daha fazlası
