@@ -11,7 +11,8 @@ async function checkWeather(city) {
   const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
 
   if (response.status == 404) {
-    document.querySelector(".error").style.display = "block";
+    document.querySelector("#error-null").style.display = "none";
+    document.querySelector("#error-404").style.display = "block";
     document.querySelector(".weather").style.display = "none";
   } else {
     var data = await response.json();
@@ -35,18 +36,35 @@ async function checkWeather(city) {
     }
 
     document.querySelector(".weather").style.display = "block";
-    document.querySelector(".error").style.display = "none";
+    document.querySelector("#error-404").style.display = "none";
+    document.querySelector("#error-null").style.display = "none";
   }
 }
 
+const handleWeatherCheck = function () {
+  if (
+    searchBox.value === "" ||
+    searchBox.value === null ||
+    searchBox.value === undefined ||
+    searchBox.value.trim() === ""
+  ) {
+    document.querySelector("#error-404").style.display = "none";
+    document.querySelector("#error-null").style.display = "block";
+    document.querySelector(".weather").style.display = "none";
+  } else {
+    checkWeather(searchBox.value);
+  }
+};
+
 searchBtn.addEventListener("click", () => {
-  checkWeather(searchBox.value);
+  handleWeatherCheck();
+  searchBox.value = "";
 });
 
 document.addEventListener("keyup", (e) => {
   if (e.key === "Enter") {
-    e.preventDefault();
-    checkWeather(searchBox.value);
+    handleWeatherCheck();
+    searchBox.value = "";
   }
 });
 
