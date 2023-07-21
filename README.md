@@ -24,6 +24,7 @@ Linkini kullanarak projemi daha detaylı inceleyebilirsiniz.
 <img src="images/screenshots/main-screen.png">
 <img src="images/screenshots/info-screen.png">
 <img src="images/screenshots/error-screen.png">
+<img src="images/screenshots/error-screen2.png">
 </div>
 
 ## Daha fazlası
