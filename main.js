@@ -43,4 +43,11 @@ searchBtn.addEventListener("click", () => {
   checkWeather(searchBox.value);
 });
 
+document.addEventListener("keyup", (e) => {
+  if (e.key === "Enter") {
+    e.preventDefault();
+    checkWeather(searchBox.value);
+  }
+});
+
 checkWeather();
